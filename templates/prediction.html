@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medical Durg Prediction</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
+</head>
+
+
+<body style = "background-image: url('/static/asc.png');">
+
+<h1>Medical Durg Prediction</h1>
+<br>
+
+<form action="{{ url_for('predict')}}" method="post">
+
+<table class="center">
+	<tr>
+		<td width="33%" height="125">
+			<img src="/static/name.png" width="100" height="100">
+		</td>
+		<td width="33%" height="125">
+			<img src="/static/age.jpg" width="100" height="100">
+		</td>
+		<td width="33%" height="125">
+			<img src="/static/gender.jpg" width="100" height="100">
+		</td>
+		
+	</tr>
+
+	<tr>
+		<td width="30%" height="50">
+			<input type="text" id="name" name="name" placeholder="Name">
+		</td>
+		<td width="30%" height="50">
+			<input type="number" id="age" name="age" placeholder="Age">
+		</td>
+		<td width="30%" height="50">
+			<select name="gender" id="gender">
+   	 			<option value="M">Male</option>
+    			<option value="F">Female</option>
+  			</select>
+		</td>
+		
+	</tr>
+
+	<tr><td height="30"></td></tr>
+
+	<tr>
+		<td width="30%" height="125">
+			<img src="/static/bp.png" width="100" height="100">
+		</td>
+		<td width="30%" height="125">
+			<img src="/static/cholostrol.jpg" width="100" height="100">
+		</td>
+		<td width="30%" height="125">
+			<img src="/static/sp.png" width="100" height="100">
+		</td>
+		
+	</tr>
+
+	<tr>
+		<td width="30%" height="50">
+			<select name="bp" id="bp">
+   	 			<option value="HIGH">High</option>
+    			<option value="LOW">Low</option>
+    			<option value="NORMAL">Normal</option>
+  			</select>
+		</td>
+		<td width="30%" height="50">
+			<select name="cholostrol" id="cholostrol">
+   	 			<option value="HIGH">High</option>
+    			<option value="NORMAL">Normal</option>
+  			</select>
+		</td>
+		<td width="30%" height="50">
+			<input type="number" step="any" id="Na_k" name="Na_k" placeholder="Level">
+		</td>
+		
+	</tr>
+		
+	<tr>
+		<td height="50"></td>
+
+	</tr>
+	<tr>
+		<td></td>
+		<td> 
+			<input type="submit" name="submit" class="button">
+		</td>
+	</tr>
+</table>
+
+ </form>
+
+<h2>{{ prediction_text }}<h2>
+
+</body>
+</html>
